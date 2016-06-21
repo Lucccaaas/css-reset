@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>CSS RESET</title>
+<!-- 2016-06-21 Tue 11:15 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="wuyunge" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">CSS RESET</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. 最简化的CSS Reset</a></li>
+<li><a href="#sec-2">2. 浓缩实用型CSS Reset</a></li>
+<li><a href="#sec-3">3. Poor Man's CSS Reset</a></li>
+<li><a href="#sec-4">4. Siolon's Global Reset</a></li>
+<li><a href="#sec-5">5. Shaun Inman's Global Reset</a></li>
+<li><a href="#sec-6">6. YUI CSS Reset:</a></li>
+<li><a href="#sec-7">7. Summary</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> 最简化的CSS Reset</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>基本的reset
+<div class="org-src-container">
+
+<pre class="src src-css"><span style="color: #b58900;">* </span>{
+  <span style="color: #6c71c4;">padding</span>: 0;
+  <span style="color: #6c71c4;">margin</span>:0;
+}
+</pre>
+</div>
+</li>
+<li>加入border
+<div class="org-src-container">
+
+<pre class="src src-css"><span style="color: #b58900;">* </span>{
+  <span style="color: #6c71c4;">padding</span>: 0;
+  <span style="color: #6c71c4;">margin</span>:0;
+  <span style="color: #6c71c4;">border</span>: 0;
+}
+</pre>
+</div>
+</li>
+<li>加入outline
+<div class="org-src-container">
+
+<pre class="src src-css"><span style="color: #b58900;">* </span>{
+  <span style="color: #6c71c4;">padding</span>: 0;
+  <span style="color: #6c71c4;">margin</span>:0;
+  <span style="color: #6c71c4;">border</span>:0;
+  <span style="color: #6c71c4;">outline</span>:0;
+}
+</pre>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> 浓缩实用型CSS Reset</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+出自Perishable Press
+</p>
+<div class="org-src-container">
+
+<pre class="src src-css"><span style="color: #b58900;">* </span>{
+  <span style="color: #6c71c4;">vertical-align</span>: baseline;
+  <span style="color: #6c71c4;">font-weight</span>: inherit;
+  <span style="color: #6c71c4;">font-family</span>: inherit;
+  <span style="color: #6c71c4;">font-style</span>: inherit;
+  <span style="color: #6c71c4;">font-size</span>: 100%;
+  <span style="color: #6c71c4;">padding</span>: 0;
+  <span style="color: #6c71c4;">margin</span>:0;
+  <span style="color: #6c71c4;">border</span>:0;
+  <span style="color: #6c71c4;">outline</span>:0;
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Poor Man's CSS Reset</h2>
+<div class="outline-text-2" id="text-3">
+<div class="org-src-container">
+
+<pre class="src src-css"><span style="color: #b58900;">html,body </span>{
+  <span style="color: #6c71c4;">padding</span>: 0;
+  <span style="color: #6c71c4;">margin</span>: 0;
+}
+<span style="color: #b58900;">html </span>{
+  <span style="color: #6c71c4;">font-size</span>: 1em;
+}
+<span style="color: #b58900;">body </span>{
+  <span style="color: #6c71c4;">font-size</span>: 100%;
+}
+<span style="color: #b58900;">a img, :link img, :visited img </span>{
+  <span style="color: #6c71c4;">border</span>: 0px;
+}
+<span style="color: #b58900;">* </span>{
+  <span style="color: #6c71c4;">padding</span>: 0;
+  <span style="color: #6c71c4;">margin</span>:0;
+  <span style="color: #6c71c4;">border</span>:0;
+  <span style="color: #6c71c4;">outline</span>:0;
+}
+</pre>
+</div>
+<p>
+这个重设方法将html和body下元素的padding和margin都设为0，
+并分别为html标签和body标签下的所有元素设置了初始的字体大小，
+最重要的是把有链接的图片的默认边框去掉了。
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Siolon's Global Reset</h2>
+<div class="outline-text-2" id="text-4">
+<div class="org-src-container">
+
+<pre class="src src-css"><span style="color: #b58900;">* </span>{
+  <span style="color: #6c71c4;">vertical-align</span>: baseline;
+  <span style="color: #6c71c4;">font-family</span>: inherit;
+  <span style="color: #6c71c4;">font-style</span>: inherit;
+  <span style="color: #6c71c4;">border</span>: none;
+  <span style="color: #6c71c4;">padding</span>: 0;
+  <span style="color: #6c71c4;">margin</span>: 0;
+}
+<span style="color: #b58900;">body </span>{
+  <span style="color: #6c71c4;">padding</span>: 5px;
+}
+<span style="color: #b58900;">h1, h2, h3, h4, h5, h6, p, pre, blockquote, form, ul, ol, dl </span>{
+  <span style="color: #6c71c4;">margin</span>: 20px 0;
+}
+<span style="color: #b58900;">li, dd, blockquote </span>{
+  <span style="color: #6c71c4;">margin-left</span>: 40px;
+}
+<span style="color: #b58900;">table </span>{
+  <span style="color: #6c71c4;">border-collapse</span>: collapse;
+  <span style="color: #6c71c4;">border-spacing</span>: 0;
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Shaun Inman's Global Reset</h2>
+<div class="outline-text-2" id="text-5">
+<div class="org-src-container">
+
+<pre class="src src-css"><span style="color: #b58900;">body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,</span>
+<span style="color: #b58900;">pre, form, fieldset, input, p, blockquote,</span>
+<span style="color: #b58900;">table, th, td, embed, object </span>{
+  <span style="color: #6c71c4;">padding</span>: 0;
+  <span style="color: #6c71c4;">margin</span>: 0;
+}
+<span style="color: #b58900;">table </span>{
+  <span style="color: #6c71c4;">border-collapse</span>: collapse;
+  <span style="color: #6c71c4;">border-spacing</span>: 0;
+}
+<span style="color: #b58900;">fieldset, img, abbr </span>{
+  <span style="color: #6c71c4;">border</span>: 0;
+}
+<span style="color: #b58900;">address, caption, cite, code, dfn, em,</span>
+<span style="color: #b58900;">h1, h2, h3, h4, h5, h6, strong, th, var </span>{
+  <span style="color: #6c71c4;">font-weight</span>: normal;
+  <span style="color: #6c71c4;">font-style</span>: normal;
+}
+<span style="color: #b58900;">ul </span>{
+  <span style="color: #6c71c4;">list-style</span>: none;
+}
+<span style="color: #b58900;">caption, th </span>{
+  <span style="color: #6c71c4;">text-align</span>: left;
+}
+<span style="color: #b58900;">h1, h2, h3, h4, h5, h6 </span>{
+  <span style="color: #6c71c4;">font-size</span>: 1.0em;
+}
+<span style="color: #6c71c4;">q</span>:before, q:after {
+  <span style="color: #6c71c4;">content</span>: <span style="color: #2aa198;">""</span>;
+}
+<span style="color: #b58900;">a, ins </span>{
+  <span style="color: #6c71c4;">text-decoration</span>: none;
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> YUI CSS Reset:</h2>
+<div class="outline-text-2" id="text-6">
+<div class="org-src-container">
+
+<pre class="src src-css"><span style="color: #b58900;">body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,</span>
+<span style="color: #b58900;">form,fieldset,input,textarea,p,blockquote,th,td </span>{
+   <span style="color: #6c71c4;">padding</span>: 0;
+   <span style="color: #6c71c4;">margin</span>: 0;
+}
+<span style="color: #b58900;">table </span>{
+  <span style="color: #6c71c4;">border-collapse</span>: collapse;
+  <span style="color: #6c71c4;">border-spacing</span>: 0;
+}
+<span style="color: #b58900;">fieldset,img </span>{
+  <span style="color: #6c71c4;">border</span>: 0;
+}
+<span style="color: #b58900;">address,caption,cite,code,dfn,em,strong,th,var </span>{
+  <span style="color: #6c71c4;">font-weight</span>: normal;
+  <span style="color: #6c71c4;">font-style</span>: normal;
+}
+<span style="color: #b58900;">ol,ul </span>{
+  <span style="color: #6c71c4;">list-style</span>: none;
+}
+<span style="color: #b58900;">caption,th </span>{
+  <span style="color: #6c71c4;">text-align</span>: left;
+}
+<span style="color: #b58900;">h1,h2,h3,h4,h5,h6 </span>{
+  <span style="color: #6c71c4;">font-weight</span>: normal;
+  <span style="color: #6c71c4;">font-size</span>: 100%;
+}
+<span style="color: #6c71c4;">q</span>:before,q:after {
+   <span style="color: #6c71c4;">content</span>:<span style="color: #2aa198;">""</span>;
+}
+<span style="color: #b58900;">abbr,acronym </span>{
+   <span style="color: #6c71c4;">border</span>: 0;
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Summary</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+reset需要处理的属性
+</p>
+<ul class="org-ul">
+<li>margin和padding
+<ul class="org-ul">
+<li>body in chrome has "margin:8px"
+</li>
+<li>ul ol有预设样式
+</li>
+</ul>
+</li>
+<li>border, outline
+<ul class="org-ul">
+<li>:visited, :link 下的 img 会有预设的border
+</li>
+<li>:foucs的元素会有预设outline
+</li>
+</ul>
+</li>
+<li>text-decoration
+<ul class="org-ul">
+<li>a:active有预设样式
+</li>
+</ul>
+</li>
+<li>font-style
+<ul class="org-ul">
+<li>em 有预设样式
+</li>
+</ul>
+</li>
+<li>list-style
+<ul class="org-ul">
+<li>ul ol 有预设样式
+</li>
+</ul>
+</li>
+<li>border-collapse, border-spacing
+<ul class="org-ul">
+<li>table 有预设样式
+</li>
+</ul>
+</li>
+<li>vertical
+<ul class="org-ul">
+<li>不同元素的vertical表现并不一致
+</li>
+</ul>
+</li>
+<li>font-family
+<ul class="org-ul">
+<li>安全字体
+</li>
+</ul>
+</li>
+<li>font-weight
+<ul class="org-ul">
+<li>strong 有预设font-weight
+</li>
+<li>h(1,2,3..)系列有预设font-weight
+</li>
+</ul>
+</li>
+<li>text-aglin
+<ul class="org-ul">
+<li>caption 和 th 有预设 text-align
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: wuyunge</p>
+<p class="date">Created: 2016-06-21 Tue 11:15</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>
